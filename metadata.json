@@ -1,0 +1,7 @@
+{
+  "name": "Codevamp Technologies - The Living Intelligence",
+  "description": "A high-end, futuristic AI automation and software company landing page featuring interactive 3D elements, neural networks, and cinematic storytelling.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

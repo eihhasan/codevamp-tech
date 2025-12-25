@@ -67,7 +67,7 @@ const IndustryCard: React.FC<{ industry: typeof INDUSTRIES[0], idx: number }> = 
       <div className="w-full lg:w-1/2 group relative cursor-pointer overflow-hidden rounded-2xl sm:rounded-3xl">
         <motion.img
           src={industry.image}
-          alt={industry.name}
+          alt={`${industry.name} - AI and software solutions by Codevamp Technologies`}
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.6 }}
           className="w-full aspect-video object-cover brightness-50 group-hover:brightness-75 transition-all"

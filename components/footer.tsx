@@ -23,7 +23,7 @@ export default function FutureFooter() {
                                     <Icons.Mail className="w-3 h-3 sm:w-4 sm:h-4" />
                                 </div>
                                 <span className="text-xs sm:text-sm font-bold tracking-wider sm:tracking-widest uppercase break-all sm:break-normal">
-                                    info@codevamp.tech
+                                    support@codevamp.tech
                                 </span>
                             </div>
 

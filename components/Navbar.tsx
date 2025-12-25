@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           className="hidden md:block pointer-events-auto bg-[#db5627] text-white px-4 lg:px-6 py-1.5 lg:py-2 rounded-full text-xs lg:text-sm font-semibold hover:bg-[#ef7d54] transition-all hover:shadow-[0_0_20px_rgba(219,86,39,0.6)]"
         >
-          Liaison
+          Contact
         </motion.button>
 
         {/* Mobile Hamburger Menu */}

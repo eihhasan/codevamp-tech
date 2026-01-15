@@ -34,17 +34,17 @@ export default function FutureFooter() {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    // Use environment variable or fallback to placeholder
+                    // Option 1: Use environment variable (recommended)
                     access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY",
-
+                    
                     // Email configuration
                     subject: `New Contact Form Submission from ${formData.name}`,
                     from_name: formData.name,
                     email: formData.email,
                     message: formData.message,
                     to: "support@codevamp.tech",
-
-                    // Optional: Add reply-to for easier responses
+                    
+                    // Optional: Add reply-to
                     replyto: formData.email,
                 }),
             });
@@ -159,7 +159,7 @@ export default function FutureFooter() {
                                     />
                                 </div>
 
-                                <button
+                                <button 
                                     type="submit"
                                     disabled={isSubmitting}
                                     className="w-full bg-[#db5627] text-white font-extrabold py-4 sm:py-5 lg:py-6 rounded-xl sm:rounded-2xl hover:scale-[0.98] transition-all shadow-[0_10px_25px_rgba(219,86,39,0.3)] sm:shadow-[0_20px_40px_rgba(219,86,39,0.3)] tracking-[0.1em] sm:tracking-[0.2em] uppercase text-[10px] sm:text-xs disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
@@ -175,10 +175,11 @@ export default function FutureFooter() {
                                 </button>
 
                                 {submitStatus.type && (
-                                    <div className={`text-center text-xs sm:text-sm font-medium p-3 sm:p-4 rounded-xl ${submitStatus.type === "success"
-                                        ? "bg-green-500/10 text-green-400 border border-green-500/20"
-                                        : "bg-red-500/10 text-red-400 border border-red-500/20"
-                                        }`}>
+                                    <div className={`text-center text-xs sm:text-sm font-medium p-3 sm:p-4 rounded-xl ${
+                                        submitStatus.type === "success" 
+                                            ? "bg-green-500/10 text-green-400 border border-green-500/20" 
+                                            : "bg-red-500/10 text-red-400 border border-red-500/20"
+                                    }`}>
                                         {submitStatus.message}
                                     </div>
                                 )}

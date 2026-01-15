@@ -32,11 +32,11 @@ const Hero: React.FC = () => {
           <button
             onClick={() => {
               document
-                .getElementById("sectors")
+                .getElementById("products")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
             className="w-full sm:w-auto px-4 py-3 sm:px-6 sm:py-4 md:px-8 md:py-4 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform flex items-center justify-center gap-2 text-sm sm:text-base">
-            Explore our work <Icons.ArrowRight size={16} sm:size={20} />
+            Explore our work <Icons.ArrowRight size={16} />
           </button>
 
           <button

@@ -5,10 +5,10 @@ import { ServiceCard, IndustryData, NavItem } from './types';
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Genesis', href: '#hero' },
-  { label: 'Transform', href: '#transform' },
+  { label: 'Transform', href: '#products' },
   { label: 'Sectors', href: '#sectors' },
   { label: 'Intelligence', href: '#intelligence' },
-  { label: 'Future', href: '#future' },
+  { label: 'Future', href: '#why-us' },
 ];
 
 export const SERVICES: ServiceCard[] = [

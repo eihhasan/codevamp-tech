@@ -24,7 +24,7 @@ const WHY_US = [
 
 export default function WhyUs() {
     return (
-        <section className="py-12 sm:py-16 md:py-20 lg:py-24">
+        <section id="why-us" className="py-12 sm:py-16 md:py-20 lg:py-24">
             <div className="container mx-auto px-4 sm:px-6">
                 <div className="bg-gradient-to-br from-copper/10 to-transparent border border-[#333] rounded-3xl sm:rounded-[40px] p-6 sm:p-8 md:p-12 lg:p-16 overflow-hidden relative">
                     {/* Background blur effect - smaller on mobile */}

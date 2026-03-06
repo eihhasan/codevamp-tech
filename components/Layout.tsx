@@ -160,7 +160,6 @@ const Layout: React.FC = () => {
       <NeuralNetworkSection />
       <WhyUs />
       <CallToAction />
-      <FutureFooter />
     </main>
   );
 };

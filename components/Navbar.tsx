@@ -2,14 +2,23 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_ITEMS } from '../constants';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  onNavigate?: (view: string) => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 py-4 sm:py-8 flex justify-between items-center pointer-events-none">
         {/* Logo - Responsive text size */}
-        <a href="/" className="pointer-events-auto">
+        <a href="/" className="pointer-events-auto" onClick={(e) => {
+          if (onNavigate) {
+            e.preventDefault();
+            onNavigate('home');
+          }
+        }}>
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -37,6 +46,12 @@ const Navbar: React.FC = () => {
             <motion.a
               key={item.href}
               href={item.href}
+              onClick={(e) => {
+                if (item.href === 'product' && onNavigate) {
+                  e.preventDefault();
+                  onNavigate('product');
+                }
+              }}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
@@ -110,10 +125,16 @@ const Navbar: React.FC = () => {
                     <motion.a
                       key={item.href}
                       href={item.href}
+                      onClick={(e) => {
+                        setIsMenuOpen(false);
+                        if (item.href === 'product' && onNavigate) {
+                          e.preventDefault();
+                          onNavigate('product');
+                        }
+                      }}
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      onClick={() => setIsMenuOpen(false)}
                       className="text-base font-medium text-gray-300 hover:text-white transition-all py-4 px-4 hover:bg-white/5 rounded-lg border-b border-white/5 last:border-b-0 active:scale-[0.98]"
                     >
                       {item.label}

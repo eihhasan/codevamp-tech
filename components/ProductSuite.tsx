@@ -661,126 +661,127 @@ function SuiteDetailsView({ onBack }: { onBack: () => void }) {
                         })}
                     </div>
                 </div>
-                <section className="relative pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+            </section>
+            <section className="relative pt-12 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
 
 
-                    <div className="max-w-4xl mx-auto text-center space-y-8 relative">
-                        {/* Badge - improved contrast */}
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ff7e4d]/15 border border-[#ff7e4d]/40 text-xs font-bold text-[#ff9f7a] uppercase tracking-widest drop-shadow-md">
-                            <Lock className="w-3 h-3" /> Enterprise Operations
-                        </div>
-
-                        {/* Heading - better visibility */}
-                        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white drop-shadow-xl">
-                            Internal{' '}
-                            <span className="bg-gradient-to-r from-[#ff7e4d] to-[#ff9f7a] bg-clip-text text-transparent drop-shadow-lg">
-                                Operations
-                            </span>
-                            <br />
-                            Gallery
-                        </h1>
-
-                        {/* Description - improved contrast */}
-                        <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed font-medium">
-                            A private suite of management tools custom-built to orchestrate our most critical business functions with precision and scale.
-                        </p>
-
-                        {/* Stat chips - updated with better contrast */}
-                        <div className="flex items-center justify-center gap-4 flex-wrap pt-2">
-                            {[
-                                { icon: Globe, label: 'Cloud-Native' },
-                                { icon: Zap, label: 'Real-time Sync' },
-                                { icon: Lock, label: 'Enterprise-Grade Security' },
-                            ].map((chip) => (
-                                <div
-                                    key={chip.label}
-                                    className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.05] backdrop-blur-sm rounded-xl border border-white/20 text-sm text-gray-300 font-medium hover:border-[#ff7e4d]/40 hover:bg-white/[0.08] transition-all duration-300"
-                                >
-                                    <chip.icon className="w-4 h-4 text-[#ff9f7a]" />
-                                    {chip.label}
-                                </div>
-                            ))}
-                        </div>
+                <div className="max-w-4xl mx-auto text-center space-y-8 relative">
+                    {/* Badge - improved contrast */}
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ff7e4d]/15 border border-[#ff7e4d]/40 text-xs font-bold text-[#ff9f7a] uppercase tracking-widest drop-shadow-md">
+                        <Lock className="w-3 h-3" /> Enterprise Operations
                     </div>
-                </section><section className="px-4 sm:px-6 lg:px-8 pb-36">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {internalTools.map((tool) => {
-                                const Icon = tool.icon
-                                return (
-                                    <div
-                                        key={tool.id}
-                                        className={`group relative bg-white/[0.03] backdrop-blur-sm rounded-2xl border border-white/20 hover:border-[#ff7e4d]/50 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#ff7e4d]/20 flex flex-col`}
-                                    >
-                                        {/* Browser Top Bar - improved contrast */}
-                                        <div className="h-9 bg-black/40 border-b border-white/10 flex items-center px-4 gap-1.5 shrink-0 backdrop-blur-sm">
-                                            <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                                            <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                                            <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                                            <div className="mx-auto flex items-center gap-1.5 px-4 py-0.5 rounded bg-black/40 border border-white/20">
-                                                <Lock className="w-2.5 h-2.5 text-gray-400" />
-                                                <span className="text-[10px] font-medium text-gray-300 tracking-tight">internal-tools.secure</span>
-                                            </div>
-                                        </div>
 
-                                        {/* Screenshot */}
-                                        <div className="relative overflow-hidden bg-black/20" style={{ aspectRatio: '16/10' }}>
-                                            <img
-                                                src={tool.image}
-                                                alt={tool.title}
-                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                                                style={{ aspectRatio: '16/10' }}
-                                                loading="lazy"
-                                            />
-                                            {/* Hover overlay - updated with your colors */}
-                                            <div className="absolute inset-0 bg-gradient-to-t from-[#ff7e4d]/20 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
-                                            {/* Name chip overlay - better visibility */}
-                                            <div className="absolute top-4 left-4">
-                                                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-black/60 backdrop-blur-sm border border-[#ff9f7a]/40 text-[#ff9f7a] drop-shadow-md">
-                                                    <Icon className="w-3 h-3" />
-                                                    {tool.badge}
-                                                </span>
-                                            </div>
-                                        </div>
+                    {/* Heading - better visibility */}
+                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white drop-shadow-xl">
+                        Internal{' '}
+                        <span className="bg-gradient-to-r from-[#ff7e4d] to-[#ff9f7a] bg-clip-text text-transparent drop-shadow-lg">
+                            Operations
+                        </span>
+                        <br />
+                        Gallery
+                    </h1>
 
-                                        {/* Content - improved text contrast */}
-                                        <div className="p-8 flex flex-col flex-1">
-                                            <div className="flex items-start gap-4 mb-5">
-                                                <div className={`p-3 rounded-xl bg-gradient-to-br from-[#ff7e4d] to-[#e04d1a] shadow-xl shrink-0 group-hover:scale-110 transition-transform duration-500`}>
-                                                    <Icon className="w-6 h-6 text-white" />
-                                                </div>
-                                                <div>
-                                                    <div className="text-xs font-bold text-[#ff9f7a] uppercase tracking-widest mb-1 drop-shadow-md">{tool.name}</div>
-                                                    <h3 className="text-xl font-black text-white tracking-tight drop-shadow-md">{tool.title}</h3>
-                                                </div>
-                                            </div>
+                    {/* Description - improved contrast */}
+                    <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed font-medium">
+                        A private suite of management tools custom-built to orchestrate our most critical business functions with precision and scale.
+                    </p>
 
-                                            <p className="text-gray-300 text-sm leading-relaxed flex-1 mb-6 font-medium">
-                                                {tool.description}
-                                            </p>
-
-                                            {/* Info Chips - better visibility */}
-                                            <div className="flex flex-wrap gap-2 mb-8">
-                                                <span className="text-[10px] font-bold px-2.5 py-1 rounded-lg bg-white/[0.06] border border-white/20 text-gray-300 uppercase tracking-wide">Cloud Ready</span>
-                                                <span className="text-[10px] font-bold px-2.5 py-1 rounded-lg bg-white/[0.06] border border-white/20 text-gray-300 uppercase tracking-wide">Real-time Sync</span>
-                                                <span className="text-[10px] font-bold px-2.5 py-1 rounded-lg bg-white/[0.06] border border-white/20 text-gray-300 uppercase tracking-wide">Module V.2</span>
-                                            </div>
-
-                                            <a href={tool.link} target="_blank" rel="noopener noreferrer" className="block outline-none mt-auto">
-                                                <Button className={`w-full h-12 bg-gradient-to-r from-[#ff7e4d] to-[#e04d1a] hover:from-[#ff8e5f] hover:to-[#f0551f] text-white border-0 shadow-xl shadow-[#ff7e4d]/30 rounded-xl font-bold uppercase tracking-widest text-xs overflow-hidden relative group/btn transition-all duration-300`}>
-                                                    <span className="relative z-10 flex items-center justify-center gap-2">
-                                                        Access System <ExternalLink className="w-4 h-4" />
-                                                    </span>
-                                                    <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000" />
-                                                </Button>
-                                            </a>
+                    {/* Stat chips - updated with better contrast */}
+                    <div className="flex items-center justify-center gap-4 flex-wrap pt-2">
+                        {[
+                            { icon: Globe, label: 'Cloud-Native' },
+                            { icon: Zap, label: 'Real-time Sync' },
+                            { icon: Lock, label: 'Enterprise-Grade Security' },
+                        ].map((chip) => (
+                            <div
+                                key={chip.label}
+                                className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.05] backdrop-blur-sm rounded-xl border border-white/20 text-sm text-gray-300 font-medium hover:border-[#ff7e4d]/40 hover:bg-white/[0.08] transition-all duration-300"
+                            >
+                                <chip.icon className="w-4 h-4 text-[#ff9f7a]" />
+                                {chip.label}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+            <section className="px-4 sm:px-6 lg:px-8 pb-12">
+                <div className="max-w-7xl mx-auto">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {internalTools.map((tool) => {
+                            const Icon = tool.icon
+                            return (
+                                <div
+                                    key={tool.id}
+                                    className={`group relative bg-white/[0.03] backdrop-blur-sm rounded-2xl border border-white/20 hover:border-[#ff7e4d]/50 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#ff7e4d]/20 flex flex-col`}
+                                >
+                                    {/* Browser Top Bar - improved contrast */}
+                                    <div className="h-9 bg-black/40 border-b border-white/10 flex items-center px-4 gap-1.5 shrink-0 backdrop-blur-sm">
+                                        <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                                        <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                                        <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                                        <div className="mx-auto flex items-center gap-1.5 px-4 py-0.5 rounded bg-black/40 border border-white/20">
+                                            <Lock className="w-2.5 h-2.5 text-gray-400" />
+                                            <span className="text-[10px] font-medium text-gray-300 tracking-tight">internal-tools.secure</span>
                                         </div>
                                     </div>
-                                )
-                            })}
-                        </div>
+
+                                    {/* Screenshot */}
+                                    <div className="relative overflow-hidden bg-black/20" style={{ aspectRatio: '16/10' }}>
+                                        <img
+                                            src={tool.image}
+                                            alt={tool.title}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                            style={{ aspectRatio: '16/10' }}
+                                            loading="lazy"
+                                        />
+                                        {/* Hover overlay - updated with your colors */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#ff7e4d]/20 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
+                                        {/* Name chip overlay - better visibility */}
+                                        <div className="absolute top-4 left-4">
+                                            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-black/60 backdrop-blur-sm border border-[#ff9f7a]/40 text-[#ff9f7a] drop-shadow-md">
+                                                <Icon className="w-3 h-3" />
+                                                {tool.badge}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    {/* Content - improved text contrast */}
+                                    <div className="p-8 flex flex-col flex-1">
+                                        <div className="flex items-start gap-4 mb-5">
+                                            <div className={`p-3 rounded-xl bg-gradient-to-br from-[#ff7e4d] to-[#e04d1a] shadow-xl shrink-0 group-hover:scale-110 transition-transform duration-500`}>
+                                                <Icon className="w-6 h-6 text-white" />
+                                            </div>
+                                            <div>
+                                                <div className="text-xs font-bold text-[#ff9f7a] uppercase tracking-widest mb-1 drop-shadow-md">{tool.name}</div>
+                                                <h3 className="text-xl font-black text-white tracking-tight drop-shadow-md">{tool.title}</h3>
+                                            </div>
+                                        </div>
+
+                                        <p className="text-gray-300 text-sm leading-relaxed flex-1 mb-6 font-medium">
+                                            {tool.description}
+                                        </p>
+
+                                        {/* Info Chips - better visibility */}
+                                        <div className="flex flex-wrap gap-2 mb-8">
+                                            <span className="text-[10px] font-bold px-2.5 py-1 rounded-lg bg-white/[0.06] border border-white/20 text-gray-300 uppercase tracking-wide">Cloud Ready</span>
+                                            <span className="text-[10px] font-bold px-2.5 py-1 rounded-lg bg-white/[0.06] border border-white/20 text-gray-300 uppercase tracking-wide">Real-time Sync</span>
+                                            <span className="text-[10px] font-bold px-2.5 py-1 rounded-lg bg-white/[0.06] border border-white/20 text-gray-300 uppercase tracking-wide">Module V.2</span>
+                                        </div>
+
+                                        <a href={tool.link} target="_blank" rel="noopener noreferrer" className="block outline-none mt-auto">
+                                            <Button className={`w-full h-12 bg-gradient-to-r from-[#ff7e4d] to-[#e04d1a] hover:from-[#ff8e5f] hover:to-[#f0551f] text-white border-0 shadow-xl shadow-[#ff7e4d]/30 rounded-xl font-bold uppercase tracking-widest text-xs overflow-hidden relative group/btn transition-all duration-300`}>
+                                                <span className="relative z-10 flex items-center justify-center gap-2">
+                                                    Access System <ExternalLink className="w-4 h-4" />
+                                                </span>
+                                                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000" />
+                                            </Button>
+                                        </a>
+                                    </div>
+                                </div>
+                            )
+                        })}
                     </div>
-                </section>
+                </div>
             </section>
         </div>
     )
